@@ -18,6 +18,7 @@ pyDuino sketch installed to the board
 
 ### Installing
 
+Please view wiki for additional information.
 
 ```
 Clone repository
