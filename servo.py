@@ -1,3 +1,7 @@
+#Written by Aaron Kelly with help from the arduino library, experimental
+#tested with the arduino UNO on windows 10 with a Tower Pro SG90 servo
+#change values as needed.
+
 MIN_PULSE_WIDTH = 544;
 TRIM_DURATION = 5;
 
@@ -15,9 +19,11 @@ def write(value):
 	return writeMicroseconds(value);
 
 def writeMicroseconds(value):
-	value = value - TRIM_DURATION;
+	value = value;
+	value = usToTicks(value);
 	
-	return usToTicks(value);
+	return (value/5);
+
 
 def usToTicks(us):
 	return ((clockCyclesPerMicrosecond()* us) / 16);
